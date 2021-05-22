@@ -8,10 +8,10 @@ export default class CreatePost extends Component {
     constructor() {
         super();
         this.state = {
-            title: "{title}",
-            displayName: "{anonymous}",
+            title: "",
+            displayName: "",
             numChapter: null,
-            content: "{this is the chapter contents}",
+            content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui nunc mattis enim ut tellus elementum sagittis. Amet consectetur adipiscing elit pellentesque habitant morbi tristique. Diam donec adipiscing tristique risus nec. Aliquet bibendum enim facilisis gravida. Ipsum dolor sit amet consectetur adipiscing elit. Sit amet purus gravida quis blandit. Sed risus ultricies tristique nulla aliquet enim tortor at. Leo vel fringilla est ullamcorper eget nulla facilisi. Tortor aliquam nulla facilisi cras. Amet tellus cras adipiscing enim eu turpis egestas pretium. Nibh ipsum consequat nisl vel pretium lectus quam id leo. Porta non pulvinar neque laoreet suspendisse interdum. Tincidunt id aliquet risus feugiat in. Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna.",
             url: 'https://chapter-book-backend.herokuapp.com/',
         };
         
@@ -27,7 +27,7 @@ export default class CreatePost extends Component {
 
         const data = {
             title: this.state.title,
-            UID: "{auth.currentUser.uid}",
+            UID: "",
             displayName: this.state.displayName,
             numChapter: this.state.numChapter,
             content: this.state.content,
@@ -37,9 +37,10 @@ export default class CreatePost extends Component {
         .post(`${this.state.url}api/chapters`, data)
         .then((res) => {
             this.setState({
-                title: "{title}",
-                displayName: "{anonymous}",
-                content: "{this is the chapter contents}",
+                title: "",
+                displayName: "",
+                numChapter: null,
+                content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui nunc mattis enim ut tellus elementum sagittis. Amet consectetur adipiscing elit pellentesque habitant morbi tristique. Diam donec adipiscing tristique risus nec. Aliquet bibendum enim facilisis gravida. Ipsum dolor sit amet consectetur adipiscing elit. Sit amet purus gravida quis blandit. Sed risus ultricies tristique nulla aliquet enim tortor at. Leo vel fringilla est ullamcorper eget nulla facilisi. Tortor aliquam nulla facilisi cras. Amet tellus cras adipiscing enim eu turpis egestas pretium. Nibh ipsum consequat nisl vel pretium lectus quam id leo. Porta non pulvinar neque laoreet suspendisse interdum. Tincidunt id aliquet risus feugiat in. Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna.",
             });
         })
         .catch((err) => {
@@ -94,7 +95,7 @@ render(){
                     />
                 </div>
 
-                <div>
+                {/* <div>
                     <label>
                         Chapter Number
                     </label>
@@ -107,7 +108,7 @@ render(){
                     >
                         <option>1</option>
                     </select>
-                </div>
+                </div> */}
 
                 <input type="submit"/>
             </form>

@@ -5,10 +5,8 @@ export default function FeedCard(props) {
 
     return (
         <div>
-            <textarea
-                rows="10"
-                cols="25"
-            >{JSON.stringify(chapter)}</textarea>
+            <h5>{ chapter.title }</h5>
+            <h6>{ chapter.content }</h6>
         </div>
     )
 }

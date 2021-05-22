@@ -1,9 +1,14 @@
 import React from 'react'
 
-export default function FeedCard() {
+export default function FeedCard(props) {
+    const chapter = props.chapter;
+
     return (
         <div>
-            <h5>Feed Card</h5>
+            <textarea
+                rows="10"
+                cols="25"
+            >{JSON.stringify(chapter)}</textarea>
         </div>
     )
 }

@@ -1,9 +1,10 @@
 import './App.css';
+
 import {
   BrowserRouter as Router,
-  Switch,
   Route
 } from "react-router-dom";
+
 import Navbar from "./components/Navbar"
 import Home from "./components/Home"
 import Dashboard from './components/Dashboard';
@@ -17,6 +18,8 @@ function App() {
     <Router>
       <div>
         <h1>Book</h1>
+        <hr />
+        <br />
         <Navbar />
           <Route exact path="/" component={Home}/>
           <Route path="/dashboard"  component={Dashboard}/>

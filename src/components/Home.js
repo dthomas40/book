@@ -7,9 +7,11 @@ export default function Home() {
     return (
         <div>
             <h3>Home</h3>
-            <Feed />
-            <BookView />
             <Intro />
+            <div>
+                <Feed />
+                <BookView />
+            </div>
         </div>
     )
 }

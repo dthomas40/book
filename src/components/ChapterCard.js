@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function FeedCard(props) {
+export default function ChapterCard(props) {
     const chapter = props.chapter;
 
     return (

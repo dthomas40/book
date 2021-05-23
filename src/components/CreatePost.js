@@ -94,22 +94,7 @@ render(){
                         onChange={this.onChange}
                     />
                 </div>
-
-                {/* <div>
-                    <label>
-                        Chapter Number
-                    </label>
-                    <br />
-                    <select 
-                        placeholder="Chapter Number"
-                        name="numChapter"
-                        value={this.state.numChapter}
-                        onChange={this.onChange}
-                    >
-                        <option>1</option>
-                    </select>
-                </div> */}
-
+                
                 <input type="submit"/>
             </form>
         </div>

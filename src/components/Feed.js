@@ -1,49 +1,24 @@
-import React, { Component } from 'react'
-import axios from "axios";
+import React from 'react'
 
 import FeedCard from './FeedCard'
 
 import "../App.css";
 
-export default class Feed extends Component {
+export default function Feed(props) {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            chapters: [],
-            url: 'https://chapter-book-backend.herokuapp.com/',
-        };
+    const chapters = props.chapters;
+    let chapterList;
+
+    if (!chapters) {
+        chapterList = "there is no chapter record!";
+    } else {
+        chapterList = (chapters.map((chapter, k) => <FeedCard chapter={chapter} key={k} />));
     }
 
-    componentDidMount() {
-        axios
-        .get(`${this.state.url}api/chapters`)
-        .then((res) => {
-            this.setState({
-                chapters: res.data,
-            });
-        })
-        .catch((err) => {
-            console.log(`Error from Feed: ${err}`);
-        });
-    };
-
-    render() {
-
-        const chapters = this.state.chapters;
-        let chapterList;
-
-        if (!chapters) {
-            chapterList = "there is no chapter record!";
-        } else {
-            chapterList = (chapters.map((chapter, k) => <FeedCard chapter={chapter} key={k} />));
-        }
-
-        return (
-            <div>
-                <h4>Feed</h4>
-                {chapterList}
-            </div>
-        )
-    }
+    return (
+        <div>
+            <h4>Feed</h4>
+            {chapterList}
+        </div>
+    )
 }
